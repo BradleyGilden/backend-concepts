@@ -11,3 +11,7 @@ This repository is for learning backend frameworks and concepts
 * METEOR :x:
 * Laravel :x:
 * Django :x:
+
+### linked repos:
+
+* [**AirBnB_clone_v2**](AirBnB_clone_v2) -> flask is used to dynamically display data from a mysql database and json file.
