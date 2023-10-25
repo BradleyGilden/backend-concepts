@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
-import { getDatabase } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js"
+import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js"
 
 const appSettings = {
   apiKey: "AIzaSyBwbrvnd5Ncd7Hlv08xcJRje2ZuwLzmjEc",
@@ -14,12 +14,17 @@ const appSettings = {
 
 const app = initializeApp(appSettings);
 const database = getDatabase(app);
-
+const moviesInDB = ref(database, "movies")
 console.log(app);
 
 const textField = document.getElementById('input_field');
 const addCartButton = document.getElementById('add-button');
 
 addCartButton.addEventListener('click', () => {
+  // push(moviesInDB, textField.value)
+  set(moviesInDB, {
+    'movieTitle': textField.value,
+    'movieLead': textField.value
+  })
   console.log(textField.value);
 })
