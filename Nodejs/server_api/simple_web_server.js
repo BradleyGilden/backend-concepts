@@ -14,7 +14,7 @@ const server = http.createServer((req, res) => {
 		fs.readFile('./api_data.json', 'utf-8', (err, data) =>{
 			const jsonData = JSON.parse(data);
 			res.writeHead(200, {'Content-Type': 'application/json'});
-			res.end(jsonData);
+			res.end(JSON.stringify(jsonData));
 		})
 	} else {
 		res.writeHead(404, {'Content-Type': 'text/html'});
