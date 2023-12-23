@@ -1,3 +1,4 @@
 {
-	"gitdoc.enabled": true
+	"gitdoc.enabled": true,
+	"semistandard.nodePath": "/usr/local/lib/node_modules/semistandard"
 }
