@@ -4,7 +4,7 @@ const url = require('url');
 const server = http.createServer((req, res) => {
 	const pathName = req.url;
 	if (pathName === '/' || pathName === '/overview') {
-		res.end('<h2>This is the overview</h2>');
+		res.end('<h1>This is the overview</h1>');
 	} else if (pathName === '/product') {
 		res.end('<h1 align="center">This is the product</h1>');
 	} else {
