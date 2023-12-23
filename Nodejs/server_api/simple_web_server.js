@@ -1,6 +1,6 @@
 const http = require('http');
 const server = http.createServer((req, res) => {
-	res.end('Hello from the web server');
+	res.end('<h1>Hello from the web server</h1>');
 });
 
 server.listen(8000, 'localhost', () => {
