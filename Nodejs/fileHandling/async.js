@@ -4,7 +4,9 @@ const fs = require('fs');
 // too long to return a value or do an action
 
 // asynchronous reading
-fs.readFile('./txt/input.txt', 'utf-8', (err, data) => {
-	console.log('read data:', data);
-});
+const reading = async () => {
+	// we can use callbacks as well
+	const data = await fs.readFile('./txt/input.txt', 'utf-8');
+	console.log(data);
+};
 console.log('after read data');
