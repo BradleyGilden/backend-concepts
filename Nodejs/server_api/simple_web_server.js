@@ -1,7 +1,5 @@
-const fs = require('fs');
-const http = require('http');
-const url = require('url');
-
+const {readFile, writeFile} = require('fs');
+const http
 const server = http.createServer((req, res) => {
 	const pathName = req.url;
 	if (pathName === '/' || pathName === '/overview') {
