@@ -5,12 +5,12 @@ const fs = require('fs');
 
 // asynchronous reading using async and await
 const reading = async () => {
-	const data = await fs.promises.readFile('./txt/input.txt', 'utf-8');
-	console.log(data);
+  const data = await fs.promises.readFile('./txt/input.txt', 'utf-8');
+  console.log(data);
 };
 reading();
 // using promises
 fs.readFile('./txt/input.txt', 'utf-8', (err, data) => {
-	console.log(data);
+  console.log(data);
 })
 console.log('after read data\n');
