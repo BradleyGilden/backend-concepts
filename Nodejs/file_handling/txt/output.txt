@@ -1,2 +1,1 @@
-this is being written to a file
-this is being appended to the file
+THIS IS AWESOME: Hello this is the first file. Hello this is the second file.
