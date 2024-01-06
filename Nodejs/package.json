@@ -4,7 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon event_driven/server_events.js",
+    "event": "node event_driven/events.js",
+    "async": "node file_handling/async.js",
+    "asyncc": "node file_handling/async_custom.js",
+    "sync": "node file_handling/sync.js",
+    "blocking": "node server_api/blocking.js",
+    "webserv": "node server_api/blocking.js"
   },
   "keywords": [],
   "author": "",
