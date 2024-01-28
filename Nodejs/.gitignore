@@ -9,3 +9,4 @@
 09-stripe-payment
 10-e-commerce-api
 11-auth-workflow
+**/.env
