@@ -1,0 +1,21 @@
+{
+  "name": "oauth2",
+  "version": "1.0.0",
+  "description": "* an authorization prcoess that abstracts login details by creating a token to verify with an external service/application that a user has already logged into. * with this access, the application will able to access data relating to the external service they logged in with * a users credetials are never exposed to the application using OAuth, only the data related to the external application in the sign up process * The access token can set to expire at any time or be revoked at any time * OAuth2 can also generate referesh tokens when the old one expires without the developers intervention",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-session": "^1.18.0",
+    "passport": "^0.7.0",
+    "passport-google-oauth2": "^0.2.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.4"
+  }
+}
