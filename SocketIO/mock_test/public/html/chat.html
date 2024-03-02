@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat App</title>
+  <script defer src="https://cdn.tailwindcss.com"></script>
+  <link ref="stylesheet" href="index.css" />
+</head>
+<body class="w-[100vw] h-[100vh] grid place-items-center">
+  <div class="flex flex-col gap-3 w-3/4">
+    <h1 class="text-3xl text-center gap-3"> Chat APP </h1>
+    <div class="w-full h-[calc(0.5*100vh)] border-4 border-black rounded-lg">
+      <ul class="w-full px-4 bg-white text-black [&>*:nth-child(even)]:text-white [&>*:nth-child(even)]:bg-gray-500 " id="messages">
+
+      </ul>
+    </div>
+    <form id="form" class="w-full">
+      <div class="flex w-full gap-10">
+        <input id="send" type="text" class="text-xl w-4/5 border-2 border-black px-4 focus:border-green-500 outline-none mr-1" />
+        <button type="submit" class="px-3 border-2 border-black rounded-lg text-2xl grow hover:border-green-500 hover:text-green-500">Send</button>
+      </div>
+      <div class="flex w-full gap-10">
+        <input type="text" class="text-xl w-4/5 border-2 border-black px-4 focus:border-green-500 outline-none mr-1" />
+        <button type="submit" class="px-3 border-2 border-black rounded-lg text-2xl grow hover:border-green-500 hover:text-green-500">Join</button>
+      </div>
+    </form>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="/js/clientSocket.js"></script>
+</body>
+</html>
