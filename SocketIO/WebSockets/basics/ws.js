@@ -18,7 +18,7 @@ const wss = new websocket.WebSocketServer({ server });
 wss.on('connection', (ws, _req) => {
   ws.send('Welcome to the WebSocket server!!!');
 
-
+// when message event is sent from client
   ws.on('message', (data) => {
     console.log(data.toString());
   })
