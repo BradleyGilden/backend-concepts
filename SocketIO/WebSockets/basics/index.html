@@ -9,8 +9,11 @@
   <script>
     let ws = new WebSocket('ws://localhost:3000');
 
-    ws.onmessage = (messageEvent) => {
-      console.log(messageEvent.data);
+    ws.onopen = (e) => {
+      ws.send('Hello from the Client');
+    }
+    ws.onmessage = (e) => {
+      console.log(e.data);
     }
   </script>
 </body>

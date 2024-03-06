@@ -15,9 +15,18 @@ const wss = new websocket.WebSocketServer({ server });
 // })
 
 // connection event emiited once handshake is complete
-wss.on('connection', (ws, req) => {
+wss.on('connection', (ws, _req) => {
   ws.send('Welcome to the WebSocket server!!!');
+
+
+  ws.on('message', (data) => {
+    console.log(data.toString());
+  })
 });
+
+wss.on('error', (err) => {
+  console.log(err);
+})
 
 server.listen('3000', () => {
   console.log('server is running on port 3000')
