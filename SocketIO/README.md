@@ -1,3 +1,3 @@
-# Socket.io
+# Socket.io ( with web sockets )
 
-Socket.io uses websockets for real time communication, so that we don't have make multiple http requests
+This repository explores the concepts of Socket.io and Web Sockets
