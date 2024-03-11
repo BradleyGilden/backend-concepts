@@ -9,3 +9,7 @@ socket.on('connect', () => {
 socket.on('messageFromServer', (message) => {
   console.log(message?.data)
 });
+
+socket.on('Greetings', (message) => {
+  console.log(message);
+})
