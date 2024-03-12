@@ -25,17 +25,20 @@ instrument(io, {
 });
 
 io.on('connection', (socket) => {
+  console.log('socket', socket.id, 'has connected');
+
   socket.on('messageFromClient', (message) => {
     console.log('this is from client', message?.data);
   })
   socket.emit('messageFromServer', { data: 'hello from the server in root namespace'});
-  // socket joins a room
-  socket.join('room1');
-  console.log('joined room')
-  socket.to('room1').emit('joinedRoom', `${socket.id} joined room 1`)
 })
 
-// io.of('/admin').on('connection', (adminSocket) => {
-//   console.log('connected to admin namespace', adminSocket.id)
-//   io.of('/admin').emit('messageFromServerAdmin', { data: 'hello from the server in admin namespace'});
-// });
+io.of('/admin').on('connection', (adminSocket) => {
+  console.log('connected to admin namespace', adminSocket.id)
+
+  adminSocket.on('messageFromClientAdmin', (message) => {
+    console.log('This is from admin', message?.data);
+  })
+
+  io.of('/admin').emit('messageFromServerAdmin', { data: 'hello from the server in admin namespace'});
+});
