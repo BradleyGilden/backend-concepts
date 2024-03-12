@@ -40,5 +40,5 @@ io.of('/admin').on('connection', (adminSocket) => {
     console.log('This is from admin', message?.data);
   })
 
-  adminSocket.emit('messageFromServerAdmin', { data: 'hello from the server in admin namespace'});
+  io.of('/admin').emit('messageFromServerAdmin', { data: 'hello from the server in admin namespace'});
 });
