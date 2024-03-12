@@ -12,11 +12,11 @@ socket.on('messageFromServer', (message) => {
 });
 
 adminSocket.on('connect', () => {
-  console.log('socket', socket?.id, 'is connected from the admin namespace');
+  console.log('socket', adminSocket?.id, 'is connected from the admin namespace');
 
-  socket.emit('messageFromClient', { data: 'hello from the client in admin namespace'});
+  adminSocket.emit('messageFromClientAdmin', { data: 'hello from the client in admin namespace'});
 });
 
-adminSocket.on('messageFromServer', (message) => {
+adminSocket.on('messageFromServerAdmin', (message) => {
   console.log(message?.data)
 });

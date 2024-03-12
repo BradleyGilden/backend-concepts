@@ -3,6 +3,7 @@ import socketio from 'socket.io';
 import { instrument } from '@socket.io/admin-ui'; // to monitor sockets
 import { join } from 'path';
 import cors from 'cors';
+import translate from 'google-translate-api-x';
 
 const app = express(cors({ origin: true, credentials: true}));
 
@@ -27,7 +28,7 @@ io.on('connection', (socket) => {
   console.log('socket', socket.id, 'has connected');
 
   socket.on('messageFromClient', (message) => {
-    console.log(message?.data);
+    console.log('this is from client', message?.data);
   })
   socket.emit('messageFromServer', { data: 'hello from the server in root namespace'});
 })
@@ -35,9 +36,9 @@ io.on('connection', (socket) => {
 io.of('/admin').on('connection', (adminSocket) => {
   console.log('connected to admin namespace', adminSocket.id)
 
-  adminSocket.on('messageFromClient', (message) => {
-    console.log(message?.data);
+  adminSocket.on('messageFromClientAdmin', (message) => {
+    console.log('This is from admin', message?.data);
   })
 
-  adminSocket.emit('messageFromServer', { data: 'hello from the server in admin namespace'});
+  adminSocket.emit('messageFromServerAdmin', { data: 'hello from the server in admin namespace'});
 });
